@@ -24,8 +24,11 @@ function StatCard({ title, value, icon: Icon, description }: {
 }
 
 export function AdminDashboard() {
+  // NOTE: distinct key from ['admin', 'courses'] — that one holds full course
+  // rows (used by CoursesPage / StudentsPage). This query only needs id+published
+  // for counts, so it gets its own key to avoid shadowing the full data.
   const { data: courses } = useQuery({
-    queryKey: ['admin', 'courses'],
+    queryKey: ['admin', 'course-stats'],
     queryFn: async () => {
       const { data } = await supabase.from('courses').select('id, published')
       return data ?? []
