@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 36% 97%;
+    --foreground: 222 24% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 24% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 24% 16%;
+    --primary: 233 46% 44%;
+    --primary-foreground: 40 40% 98%;
+    --secondary: 38 22% 92%;
+    --secondary-foreground: 222 24% 22%;
+    --muted: 38 22% 93%;
+    --muted-foreground: 220 12% 45%;
+    --accent: 38 30% 91%;
+    --accent-foreground: 222 24% 20%;
+    --destructive: 2 70% 47%;
+    --destructive-foreground: 40 40% 98%;
+    --border: 36 18% 87%;
+    --input: 36 18% 85%;
+    --ring: 233 46% 44%;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 224 18% 9%;
+    --foreground: 40 18% 92%;
+    --card: 224 14% 16%;
+    --card-foreground: 40 18% 92%;
+    --popover: 224 14% 16%;
+    --popover-foreground: 40 18% 92%;
+    --primary: 233 72% 73%;
+    --primary-foreground: 224 35% 12%;
+    --secondary: 224 12% 20%;
+    --secondary-foreground: 40 18% 92%;
+    --muted: 224 12% 18%;
+    --muted-foreground: 220 10% 63%;
+    --accent: 224 12% 22%;
+    --accent-foreground: 40 18% 92%;
+    --destructive: 0 62% 53%;
+    --destructive-foreground: 40 18% 95%;
+    --border: 224 10% 24%;
+    --input: 224 10% 26%;
+    --ring: 233 72% 73%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Print: show only the certificate, hide app chrome */
+@media print {
+  aside { display: none !important; }
+  main { margin-left: 0 !important; padding-top: 0 !important; }
+  .no-print { display: none !important; }
+}
+
+/* Tiptap editor styles */
+.ProseMirror {
+  @apply outline-none min-h-[200px] p-4;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  @apply text-muted-foreground;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.ProseMirror h1 { @apply text-3xl font-bold mt-6 mb-3; }
+.ProseMirror h2 { @apply text-2xl font-bold mt-5 mb-2; }
+.ProseMirror h3 { @apply text-xl font-semibold mt-4 mb-2; }
+.ProseMirror ul { @apply list-disc pl-6 my-3 space-y-1; }
+.ProseMirror ol { @apply list-decimal pl-6 my-3 space-y-1; }
+.ProseMirror blockquote { @apply border-l-4 border-muted pl-4 italic text-muted-foreground my-4; }
+.ProseMirror code { @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono; }
+.ProseMirror pre { @apply bg-muted rounded-md p-4 my-4 overflow-x-auto; }
+.ProseMirror pre code { @apply bg-transparent p-0; }
+.ProseMirror strong { @apply font-bold; }
+.ProseMirror em { @apply italic; }
+.ProseMirror a { @apply text-primary underline; }
+
+/* Rendered lesson content */
+.lesson-content h1 { @apply text-3xl font-bold mt-6 mb-3; }
+.lesson-content h2 { @apply text-2xl font-bold mt-5 mb-2; }
+.lesson-content h3 { @apply text-xl font-semibold mt-4 mb-2; }
+.lesson-content ul { @apply list-disc pl-6 my-3 space-y-1; }
+.lesson-content ol { @apply list-decimal pl-6 my-3 space-y-1; }
+.lesson-content blockquote { @apply border-l-4 border-muted pl-4 italic text-muted-foreground my-4; }
+.lesson-content code { @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono; }
+.lesson-content pre { @apply bg-muted rounded-md p-4 my-4 overflow-x-auto; }
+.lesson-content pre code { @apply bg-transparent p-0; }
+.lesson-content strong { @apply font-bold; }
+.lesson-content em { @apply italic; }
+.lesson-content a { @apply text-primary underline; }
+.lesson-content p { @apply my-2 leading-7; }
+
+/* Callouts + dividers (editor + rendered view) */
+.ProseMirror .callout,
+.lesson-content .callout {
+  @apply border-l-4 rounded-md px-4 py-3 my-4;
+}
+.ProseMirror .callout > p,
+.lesson-content .callout > p {
+  @apply my-1;
+}
+.ProseMirror .callout[data-variant="info"],
+.lesson-content .callout[data-variant="info"] {
+  @apply border-blue-500 bg-blue-50;
+}
+.ProseMirror .callout[data-variant="warn"],
+.lesson-content .callout[data-variant="warn"] {
+  @apply border-yellow-500 bg-yellow-50;
+}
+.ProseMirror .callout[data-variant="success"],
+.lesson-content .callout[data-variant="success"] {
+  @apply border-green-500 bg-green-50;
+}
+.dark .ProseMirror .callout[data-variant="info"],
+.dark .lesson-content .callout[data-variant="info"] { @apply bg-blue-950/40; }
+.dark .ProseMirror .callout[data-variant="warn"],
+.dark .lesson-content .callout[data-variant="warn"] { @apply bg-yellow-950/40; }
+.dark .ProseMirror .callout[data-variant="success"],
+.dark .lesson-content .callout[data-variant="success"] { @apply bg-green-950/40; }
+.ProseMirror hr,
+.lesson-content hr {
+  @apply border-t border-border my-6;
+}
+
+/* Tables (editor + rendered view) */
+.ProseMirror .tableWrapper,
+.lesson-content .tableWrapper {
+  @apply overflow-x-auto my-4;
+}
+.ProseMirror table,
+.lesson-content table {
+  @apply w-full border-collapse text-sm;
+}
+.ProseMirror th,
+.ProseMirror td,
+.lesson-content th,
+.lesson-content td {
+  @apply border border-border px-3 py-2 text-left align-top;
+}
+.ProseMirror th,
+.lesson-content th {
+  @apply bg-muted font-semibold;
+}
+.ProseMirror table p,
+.lesson-content table p {
+  @apply my-0;
+}
+/* Cell selection + column resize handle (editor only) */
+.ProseMirror .selectedCell {
+  @apply bg-accent/40;
+}
+.ProseMirror .column-resize-handle {
+  @apply bg-primary;
+  position: absolute;
+  right: -2px;
+  top: 0;
+  bottom: -2px;
+  width: 3px;
+  pointer-events: none;
+}
+.ProseMirror.resize-cursor {
+  cursor: col-resize;
+}
+
+/* Images (editor + rendered view) */
+.ProseMirror img,
+.lesson-content img {
+  @apply max-w-full rounded-md my-4;
+}
+.ProseMirror img.ProseMirror-selectednode {
+  @apply ring-2 ring-primary;
+}
