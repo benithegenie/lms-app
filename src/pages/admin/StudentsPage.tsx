@@ -91,12 +91,12 @@ export function StudentsPage() {
             <CardTitle className="text-base">
               {selectedStudent
                 ? `${selectedStudent.full_name ?? selectedStudent.email}'s enrollments`
-                : 'Select a student'}
+                : 'Select an employee'}
             </CardTitle>
           </CardHeader>
           <CardContent>
             {!selectedStudent ? (
-              <p className="text-sm text-muted-foreground">Click a student on the left to manage their courses.</p>
+              <p className="text-sm text-muted-foreground">Click an employee on the left to manage their training.</p>
             ) : (
               <div className="space-y-4">
                 {/* Enroll form */}
