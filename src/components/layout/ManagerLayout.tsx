@@ -43,7 +43,7 @@ export function ManagerLayout() {
           <Menu className="h-5 w-5" />
         </Button>
         <GraduationCap className="h-5 w-5 text-primary" aria-hidden="true" />
-        <span className="font-semibold">LMS Manager</span>
+        <span className="font-semibold">Training Hub</span>
       </div>
 
       {mobileOpen && (
@@ -68,7 +68,7 @@ export function ManagerLayout() {
       >
         <div className="flex items-center gap-2 px-6 py-5 border-b">
           <GraduationCap className="h-6 w-6 text-primary" aria-hidden="true" />
-          <span className="font-semibold text-lg">LMS Manager</span>
+          <span className="font-semibold text-lg">Training Hub</span>
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1" aria-label="Primary">
           {nav.map(({ to, label, icon: Icon, end }) => (

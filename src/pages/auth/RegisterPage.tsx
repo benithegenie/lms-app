@@ -54,7 +54,7 @@ export function RegisterPage() {
             <GraduationCap className="h-10 w-10 text-primary" />
           </div>
           <CardTitle className="text-2xl">Create an account</CardTitle>
-          <CardDescription>Join the LMS platform</CardDescription>
+          <CardDescription>Join your team's training portal</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">

@@ -21,7 +21,7 @@ import { useMobileDrawer } from '@/hooks/useMobileDrawer'
 const nav = [
   { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true },
   { to: '/admin/courses', label: 'Courses', icon: BookOpen },
-  { to: '/admin/students', label: 'Students', icon: Users },
+  { to: '/admin/students', label: 'Employees', icon: Users },
   { to: '/admin/groups', label: 'Groups', icon: UsersRound },
   { to: '/admin/paths', label: 'Learning paths', icon: ListOrdered },
   { to: '/admin/compliance', label: 'Compliance', icon: ClipboardCheck },
@@ -63,7 +63,7 @@ export function AdminLayout() {
           <Menu className="h-5 w-5" />
         </Button>
         <GraduationCap className="h-5 w-5 text-primary" aria-hidden="true" />
-        <span className="font-semibold">LMS Admin</span>
+        <span className="font-semibold">Training Hub</span>
       </div>
 
       {/* Backdrop */}
@@ -90,7 +90,7 @@ export function AdminLayout() {
       >
         <div className="flex items-center gap-2 px-6 py-5 border-b">
           <GraduationCap className="h-6 w-6 text-primary" aria-hidden="true" />
-          <span className="font-semibold text-lg">LMS Admin</span>
+          <span className="font-semibold text-lg">Training Hub</span>
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1" aria-label="Primary">

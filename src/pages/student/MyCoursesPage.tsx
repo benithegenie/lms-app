@@ -62,15 +62,15 @@ export function MyCoursesPage() {
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-2">My Courses</h1>
-      <p className="text-muted-foreground mb-8">Your enrolled courses</p>
+      <p className="text-muted-foreground mb-8">Your assigned training</p>
 
       {isLoading ? (
         <p className="text-muted-foreground">Loading…</p>
       ) : courses.length === 0 ? (
         <div className="text-center py-24 text-muted-foreground">
           <BookOpen className="h-12 w-12 mx-auto mb-4 opacity-40" />
-          <p className="text-lg font-medium">No courses yet</p>
-          <p className="text-sm">Ask your admin to enroll you in a course.</p>
+          <p className="text-lg font-medium">No training assigned yet</p>
+          <p className="text-sm">Ask your admin or HR to enroll you in a course.</p>
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

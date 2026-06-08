@@ -84,7 +84,7 @@ export function MandatoryDialog({ course }: { course: Course }) {
         <div className="space-y-4 mt-2">
           {!course.published && (
             <p className="text-xs rounded-md bg-amber-50 border border-amber-200 text-amber-800 px-3 py-2">
-              Publish this course before assigning — students can’t open an unpublished course.
+              Publish this course before assigning — employees can’t open an unpublished course.
             </p>
           )}
 

@@ -179,11 +179,11 @@ export function GroupsPage() {
                 <div className="flex gap-2">
                   <Select value={addStudentId} onValueChange={setAddStudentId}>
                     <SelectTrigger className="flex-1">
-                      <SelectValue placeholder="Add a student…" />
+                      <SelectValue placeholder="Add an employee…" />
                     </SelectTrigger>
                     <SelectContent>
                       {availableStudents.length === 0 ? (
-                        <SelectItem value="__none" disabled>No more students</SelectItem>
+                        <SelectItem value="__none" disabled>No more employees</SelectItem>
                       ) : (
                         availableStudents.map((s) => (
                           <SelectItem key={s.id} value={s.id}>
@@ -268,7 +268,7 @@ export function GroupsPage() {
                     </SelectTrigger>
                     <SelectContent>
                       {availableManagers.length === 0 ? (
-                        <SelectItem value="__none" disabled>No students available</SelectItem>
+                        <SelectItem value="__none" disabled>No employees available</SelectItem>
                       ) : (
                         availableManagers.map((s) => (
                           <SelectItem key={s.id} value={s.id}>{s.full_name ?? s.email}</SelectItem>

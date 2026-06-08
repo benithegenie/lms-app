@@ -83,7 +83,7 @@ export function CoursesPage() {
               <div className="space-y-2">
                 <Label>Description</Label>
                 <Textarea
-                  placeholder="What students will learn…"
+                  placeholder="What employees will learn…"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows={3}
@@ -156,7 +156,7 @@ export function CoursesPage() {
                       <AlertDialogHeader>
                         <AlertDialogTitle>Delete course?</AlertDialogTitle>
                         <AlertDialogDescription>
-                          This will permanently delete "{course.title}" and all its modules, lessons, and student data.
+                          This will permanently delete "{course.title}" and all its modules, lessons, and employee progress data.
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter>

@@ -71,7 +71,7 @@ export function AdminDashboard() {
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-      <p className="text-muted-foreground mb-8">Overview of your LMS platform</p>
+      <p className="text-muted-foreground mb-8">Overview of your team's training portal</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
@@ -81,7 +81,7 @@ export function AdminDashboard() {
           description={`${publishedCount} published`}
         />
         <StatCard
-          title="Students"
+          title="Employees"
           value={students ?? 0}
           icon={Users}
         />

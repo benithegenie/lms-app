@@ -76,8 +76,8 @@ export function GradesPage() {
 
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold mb-2">My Grades</h1>
-      <p className="text-muted-foreground mb-8">Your quiz results and course progress</p>
+      <h1 className="text-3xl font-bold mb-2">My Results</h1>
+      <p className="text-muted-foreground mb-8">Your training progress and quiz results</p>
 
       {isLoading ? (
         <p className="text-muted-foreground">Loading…</p>

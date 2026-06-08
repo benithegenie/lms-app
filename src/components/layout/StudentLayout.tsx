@@ -12,7 +12,7 @@ const nav = [
   { to: '/dashboard', label: 'My Courses', icon: BookOpen, end: true },
   { to: '/dashboard/paths', label: 'Learning paths', icon: ListOrdered },
   { to: '/dashboard/search', label: 'Search', icon: Search },
-  { to: '/dashboard/grades', label: 'My Grades', icon: Star },
+  { to: '/dashboard/grades', label: 'My Results', icon: Star },
 ]
 
 export function StudentLayout() {
@@ -50,7 +50,7 @@ export function StudentLayout() {
           <Menu className="h-5 w-5" />
         </Button>
         <GraduationCap className="h-5 w-5 text-primary" aria-hidden="true" />
-        <span className="font-semibold">LMS</span>
+        <span className="font-semibold">Training Hub</span>
       </div>
 
       {/* Backdrop */}
@@ -67,7 +67,7 @@ export function StudentLayout() {
         id="student-sidebar"
         ref={drawerRef}
         tabIndex={-1}
-        aria-label="Student navigation"
+        aria-label="Employee navigation"
         role={mobileOpen ? 'dialog' : undefined}
         aria-modal={mobileOpen ? true : undefined}
         className={cn(
@@ -77,7 +77,7 @@ export function StudentLayout() {
       >
         <div className="flex items-center gap-2 px-6 py-5 border-b">
           <GraduationCap className="h-6 w-6 text-primary" aria-hidden="true" />
-          <span className="font-semibold text-lg">LMS</span>
+          <span className="font-semibold text-lg">Training Hub</span>
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1" aria-label="Primary">
